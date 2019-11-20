@@ -59,7 +59,7 @@ struct RoomData: Codable {
 //以下送剪刀石頭布答案
 struct GameOption: Codable {
     
-    let user_a_option: Int
-    let user_b_option: Int
+    let user_name: String
+    let user_option: Int
     
 }

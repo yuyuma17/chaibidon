@@ -36,18 +36,19 @@ class ChaiViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        myNameLabel.text = myName
+        
         view.addSubview(activityIndicatorView)
         activityIndicatorView.center = view.center
         activityIndicatorView.startAnimating()
         
-        monitorRoomStatus()
         repeatToGetResult()
     }
     
     @IBAction func pressScissors(_ sender: UIButton) {
         mySelectImage.image = UIImage(named: "scissors")
         user_a_option = 1
-        user_b_option = 1
+//        user_b_option = 1
         
         if user_b_option == 1 {
             otherSelectImage.image = UIImage(named: "scissors")
@@ -58,7 +59,7 @@ class ChaiViewController: UIViewController {
     @IBAction func pressRock(_ sender: UIButton) {
         mySelectImage.image = UIImage(named: "rock")
         user_a_option = 2
-        user_b_option = 2
+//        user_b_option = 2
         
         if user_b_option == 2 {
             otherSelectImage.image = UIImage(named: "rock")
@@ -69,7 +70,7 @@ class ChaiViewController: UIViewController {
     @IBAction func pressPaper(_ sender: UIButton) {
         mySelectImage.image = UIImage(named: "paper")
         user_a_option = 3
-        user_b_option = 3
+//        user_b_option = 3
         
         if user_b_option == 3 {
             otherSelectImage.image = UIImage(named: "paper")
@@ -90,7 +91,7 @@ extension ChaiViewController {
     
     func monitorRoomStatus() {
         
-        if let url = URL(string: "https://85fb8eaa.ngrok.io/api/pss/watch/\(roomID)") {
+        if let url = URL(string: "https://85fb8eaa.ngrok.io/api/pss/watch/\(roomID!)") {
             URLSession.shared.dataTask(with: url) { (data, response, error) in
                 if let error = error {
                     print("error: \(error.localizedDescription)")
@@ -109,7 +110,7 @@ extension ChaiViewController {
                         self.activityIndicatorView.removeFromSuperview()
                         self.myScoreLabel.text = "\(self.roomData?.data.records.user_a_score ?? 0)"
                         self.otherScoreLabel.text = "\(self.roomData?.data.records.user_b_score ?? 0)"
-                        self.myNameLabel.text = self.myName
+//                        if roomData?.data.records.user_b_name
                     }
                 } catch {
                     print(error.localizedDescription)
@@ -122,12 +123,12 @@ extension ChaiViewController {
     
     func sendSelection() {
         
-        let passingData = GameOption(user_a_option: user_a_option!, user_b_option: user_b_option!)
+        let passingData = GameOption(user_name: myName!, user_option: user_a_option!)
         
         guard let uploadData = try? JSONEncoder().encode(passingData) else {
             return
         }
-        let url = URL(string: "https://85fb8eaa.ngrok.io/api/pss/send/\(roomID)")!
+        let url = URL(string: "https://85fb8eaa.ngrok.io/api/pss/send/\(roomID!)")!
 
         var request = URLRequest(url: url)
         request.httpMethod = "Post"
@@ -140,13 +141,11 @@ extension ChaiViewController {
                 return
             }
 
-            guard let response = response as? HTTPURLResponse,
-                (200...299).contains(response.statusCode) else {
-                    print ("server error")
-                    return
+            if let response = response as? HTTPURLResponse {
+                print("status codeddd: \(response.statusCode)")
             }
 
-            if let mimeType = response.mimeType,
+            if let mimeType = response?.mimeType,
                 mimeType == "application/json",
                 let data = data,
                 let dataString = String(data: data, encoding: .utf8) {
