@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WaitBiViewController: UIViewController {
+class BiWaitViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +18,7 @@ class WaitBiViewController: UIViewController {
 
 }
 
-extension WaitBiViewController {
+extension BiWaitViewController {
     
     func getWaitingState() {
         let address = "https://c9aa79d8.ngrok.io/api/vs/login"
