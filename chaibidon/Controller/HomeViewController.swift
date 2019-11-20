@@ -35,14 +35,17 @@ class HomeViewController: UIViewController {
     
     @IBAction func toMoraGame(_ sender: UIButton) {
         
+        self.startMoraGame()
+        
+        while self.loginAndReceiveData == nil {}
+        
         let storyboard = UIStoryboard(name: "Chai", bundle: nil)
         let chaiVC = storyboard.instantiateViewController(identifier: "chaiVC") as! ChaiViewController
         
-        chaiVC.roomID = loginAndReceiveData?.room.id
+        chaiVC.roomID = self.loginAndReceiveData?.room.id
+        chaiVC.myName = self.playerTextField.text!
         chaiVC.vc = self
-        present(chaiVC, animated: true)
-        
-        startMoraGame()
+        self.present(chaiVC, animated: true)
     }
     
     @IBAction func enterBiGame(_ sender: UIButton) {
@@ -93,9 +96,17 @@ extension HomeViewController {
                 let data = data,
                 let dataString = String(data: data, encoding: .utf8) {
                 print (dataString)
+                self.decodeData(data)
             }
         }
         task.resume()
+    }
+    
+    func decodeData(_ data: Data) {
+        let decoder = JSONDecoder()
+        if let data = try? decoder.decode(LoginAndReceiveData.self, from: data) {
+            loginAndReceiveData = data
+        }
     }
     
     func enterBiGame() {
