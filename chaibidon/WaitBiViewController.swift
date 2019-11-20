@@ -31,9 +31,9 @@ extension WaitBiViewController {
                 guard let data = data else { return }
                 if let response = response as? HTTPURLResponse {
                     print("status code: \(response.statusCode)")
-                    if let wannaLuhseinData = try? JSONDecoder().decode(WannaLuHseinData.self, from: data) {
-                        self.wannaLuhseinData = wannaLuhseinData
-                    }
+//                    if let wannaLuhseinData = try? JSONDecoder().decode(WannaLuHseinData.self, from: data) {
+//                        self.wannaLuhseinData = wannaLuhseinData
+//                    }
                 }
             }.resume()
         }
