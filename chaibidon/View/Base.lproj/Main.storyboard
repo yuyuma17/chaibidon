@@ -15,43 +15,91 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhf-KZ-Ow9">
-                                <rect key="frame" x="184" y="505" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="fUB-ac-sss" kind="show" id="6xY-IU-0aq"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiT-M7-8Aa">
-                                <rect key="frame" x="184" y="676" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="x6p-Ai-Bbm" kind="show" id="7D5-Xu-pla"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vpz-qg-gZG">
-                                <rect key="frame" x="184" y="591" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udJ-O2-lYX">
-                                <rect key="frame" x="184" y="591" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="PmM-2F-UCL" kind="show" id="TkH-FB-0TL"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="VHb-Dw-EIa">
+                                <rect key="frame" x="147" y="188" width="120" height="600"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhf-KZ-Ow9">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                        <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Uhf-KZ-Ow9" secondAttribute="height" multiplier="1:1" id="ORd-BI-Wd6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <state key="normal" title="柴">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="fUB-ac-sss" kind="show" id="6xY-IU-0aq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udJ-O2-lYX">
+                                        <rect key="frame" x="0.0" y="160" width="120" height="120"/>
+                                        <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="udJ-O2-lYX" secondAttribute="height" multiplier="1:1" id="4Vl-lh-4LQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <state key="normal" title="比">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="PmM-2F-UCL" kind="show" id="TkH-FB-0TL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiT-M7-8Aa">
+                                        <rect key="frame" x="0.0" y="320" width="120" height="120"/>
+                                        <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="oiT-M7-8Aa" secondAttribute="height" multiplier="1:1" id="0uF-cS-IKo"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <state key="normal" title="丼">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="x6p-Ai-Bbm" kind="show" id="7D5-Xu-pla"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomeChaiBi" translatesAutoresizingMaskIntoConstraints="NO" id="7Ca-sF-IER">
+                                        <rect key="frame" x="0.0" y="480" width="120" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="7Ca-sF-IER" secondAttribute="height" multiplier="1:1" id="6VH-IE-uPl"/>
+                                            <constraint firstAttribute="width" constant="120" id="8Zf-NO-BvO"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入玩家名稱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wJv-5A-Fqi">
+                                <rect key="frame" x="50" y="64" width="314" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ayT-TU-dam"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wJv-5A-Fqi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="FA8-NY-7kN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wJv-5A-Fqi" secondAttribute="trailing" constant="50" id="Gfe-Po-w1h"/>
+                            <constraint firstItem="VHb-Dw-EIa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UrU-gT-Bxz"/>
+                            <constraint firstItem="wJv-5A-Fqi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="crd-p3-1AM"/>
+                            <constraint firstItem="VHb-Dw-EIa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="40" id="wg0-ED-bCo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="chaibi" destination="7Ca-sF-IER" id="ZFH-cR-rYv"/>
+                        <outletCollection property="chaiBiDon" destination="Uhf-KZ-Ow9" collectionClass="NSMutableArray" id="hJp-Qb-sIS"/>
+                        <outletCollection property="chaiBiDon" destination="udJ-O2-lYX" collectionClass="NSMutableArray" id="Tyf-sY-KrG"/>
+                        <outletCollection property="chaiBiDon" destination="oiT-M7-8Aa" collectionClass="NSMutableArray" id="bWd-Vc-9xd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="174" y="131"/>
+            <point key="canvasLocation" x="173.91304347826087" y="130.58035714285714"/>
         </scene>
         <!--Chai-->
         <scene sceneID="Bls-of-v3F">
@@ -84,4 +132,7 @@
             <point key="canvasLocation" x="781" y="246"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="HomeChaiBi" width="430" height="426"/>
+    </resources>
 </document>
