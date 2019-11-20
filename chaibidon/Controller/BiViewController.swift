@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class BiViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class BiViewController: UIViewController {
     var answerPoint: Int = 0
     var repeatToGetResultTimer: Timer?
     var winner: String?
+    var audioPlayer: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,16 +40,36 @@ class BiViewController: UIViewController {
     @IBOutlet var drawButton: UIButton!
     @IBAction func drawCard(_ sender: UIButton) {
         countDownTimer?.invalidate()
-        timerLabel.text = "等待對方抽卡..."
         
-        answerPoint = Int.random(in: 1...13)
+        let url = Bundle.main.url(forResource: "闇の魔術師", withExtension: ".mp3")
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url!)
+            audioPlayer.play()
+        } catch {
+            print("Error:", error.localizedDescription)
+        }
+        
+        timerLabel.text = "等待對方抽卡..."
         
         sender.isEnabled = false
         sender.backgroundColor = .darkGray
         
-        myAnswerImage.image = UIImage(named: "\(answerPoint)")
-        postRandomPoint()
-        repeatToGetResult()
+        var count: Double = 3
+        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { (timer) in
+            if count > 0 {
+                self.myAnswerImage.image = UIImage(named: "\(Int.random(in: 1...13))")
+                count -= 0.2
+                print(count)
+            } else {
+                timer.invalidate()
+                self.answerPoint = Int.random(in: 1...13)
+                
+                self.myAnswerImage.image = UIImage(named: "\(self.answerPoint)")
+                self.postRandomPoint()
+                self.repeatToGetResult()
+            }
+        }
+        
     }
 
 }
@@ -140,7 +162,10 @@ extension BiViewController {
                                     self.drawButton.backgroundColor = UIColor(red: 16/255, green: 81/255, blue: 151/255, alpha: 1)
                                     self.myAnswerImage.image = UIImage(named: "back")
                                     self.myAnswerImage.image = UIImage(named: "back")
-                                    self.dismiss(animated: true, completion: nil)
+                                    self.audioPlayer.stop()
+                                    self.dismiss(animated: true) {
+                                        self.leaveGame()
+                                    }
                                 }))
                                 self.present(alertController, animated: true, completion: nil)
                             }
@@ -150,5 +175,33 @@ extension BiViewController {
             }.resume()
         }
     }
+    
+    func leaveGame() {
+        let leave = Leave(id: 0)
+        guard let uploadData = try? JSONEncoder().encode(leave) else { return }
+                
+        let url = URL(string: "https://c9aa79d8.ngrok.io/api/vs/leave")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                
+        let task = URLSession.shared.uploadTask(with: request, from: uploadData) { (data, response, error) in
+            if let error = error {
+                print ("error: \(error)")
+                return
+            }
+            if let response = response as? HTTPURLResponse {
+                print("status code: \(response.statusCode)")
+                if let mimeType = response.mimeType,
+                    mimeType == "application/json",
+                    let data = data,
+                    let dataString = String(data: data, encoding: .utf8) {
+                    print ("got data: \(dataString)")
+                }
+            }
+        }
+        task.resume()
+    }
+    
     
 }

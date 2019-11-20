@@ -14,6 +14,13 @@ struct BiWait: Codable {
     
 }
 
+struct Leave: Codable {
+    
+    var id: Int
+    
+}
+
+
 struct BiAnswer: Codable {
     
     var name: String

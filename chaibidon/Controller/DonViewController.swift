@@ -13,7 +13,12 @@ class DonViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let url = URL(string: "")!
+        let request = URLRequest(url: url)
+        donWeb.load(request)
     }
 
-
+    @IBOutlet var donWeb: WKWebView!
+    
 }

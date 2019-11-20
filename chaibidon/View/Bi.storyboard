@@ -10,7 +10,7 @@
         <!--Bi Wait View Controller-->
         <scene sceneID="SAO-5Q-c9O">
             <objects>
-                <viewController storyboardIdentifier="waitingVC" id="ILF-aC-aqh" customClass="BiWaitViewController" customModule="chaibidon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="waitingVC" modalPresentationStyle="fullScreen" id="ILF-aC-aqh" customClass="BiWaitViewController" customModule="chaibidon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="poC-QA-8GI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,7 +38,7 @@
         <!--比 大小-->
         <scene sceneID="rWa-FZ-V1p">
             <objects>
-                <viewController id="u3J-fA-7Zg" customClass="BiViewController" customModule="chaibidon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="u3J-fA-7Zg" customClass="BiViewController" customModule="chaibidon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m85-Lj-60t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

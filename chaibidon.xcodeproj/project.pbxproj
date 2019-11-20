@@ -20,6 +20,7 @@
 		16D166322384EE4B0030860D /* (null) in Sources */ = {isa = PBXBuildFile; };
 		16D166342385105C0030860D /* ChaiStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D166332385105C0030860D /* ChaiStruct.swift */; };
 		B314F5B12385304400AE4766 /* DonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B314F5B02385304400AE4766 /* DonViewController.swift */; };
+		B314F5B32385380F00AE4766 /* 闇の魔術師.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B314F5B22385380E00AE4766 /* 闇の魔術師.mp3 */; };
 		B376433B2384FADF00EB57D0 /* ChaiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B376433A2384FADE00EB57D0 /* ChaiViewController.swift */; };
 		B376433D2384FAEA00EB57D0 /* ChaiWaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B376433C2384FAEA00EB57D0 /* ChaiWaitViewController.swift */; };
 		B3A80B7C2384F1FB00E8C9E2 /* BiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A80B7B2384F1FB00E8C9E2 /* BiViewController.swift */; };
@@ -41,6 +42,7 @@
 		16D1662D2384E2810030860D /* Don.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Don.storyboard; sourceTree = "<group>"; };
 		16D166332385105C0030860D /* ChaiStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaiStruct.swift; sourceTree = "<group>"; };
 		B314F5B02385304400AE4766 /* DonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonViewController.swift; sourceTree = "<group>"; };
+		B314F5B22385380E00AE4766 /* 闇の魔術師.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "闇の魔術師.mp3"; sourceTree = "<group>"; };
 		B376433A2384FADE00EB57D0 /* ChaiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChaiViewController.swift; sourceTree = "<group>"; };
 		B376433C2384FAEA00EB57D0 /* ChaiWaitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChaiWaitViewController.swift; sourceTree = "<group>"; };
 		B3A80B7B2384F1FB00E8C9E2 /* BiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				B3B47AF52384FBA600BA87EF /* Controller */,
 				16D166112384E0B10030860D /* AppDelegate.swift */,
 				16D166132384E0B10030860D /* SceneDelegate.swift */,
+				B314F5B22385380E00AE4766 /* 闇の魔術師.mp3 */,
 				16D1661A2384E0B20030860D /* Assets.xcassets */,
 				16D1661F2384E0B20030860D /* Info.plist */,
 			);
@@ -181,6 +184,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B314F5B32385380F00AE4766 /* 闇の魔術師.mp3 in Resources */,
 				16D1662E2384E2810030860D /* Don.storyboard in Resources */,
 				16D1661E2384E0B20030860D /* LaunchScreen.storyboard in Resources */,
 				16D1661B2384E0B20030860D /* Assets.xcassets in Resources */,

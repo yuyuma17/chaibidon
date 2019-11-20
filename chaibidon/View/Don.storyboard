@@ -10,7 +10,7 @@
         <!--終極密碼-->
         <scene sceneID="bUq-ot-uIY">
             <objects>
-                <viewController id="WdQ-Bp-SeK" sceneMemberID="viewController">
+                <viewController id="WdQ-Bp-SeK" customClass="DonViewController" customModule="chaibidon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0AT-0d-ehi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,6 +34,9 @@
                         <viewLayoutGuide key="safeArea" id="TOt-8U-6HZ"/>
                     </view>
                     <navigationItem key="navigationItem" title="終極密碼" id="vbh-2g-uye"/>
+                    <connections>
+                        <outlet property="donWeb" destination="VQO-xW-JXM" id="lRJ-vF-AYP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wif-76-aVm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
