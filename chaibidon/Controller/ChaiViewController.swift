@@ -12,7 +12,6 @@ class ChaiViewController: UIViewController {
 
     var roomData: RoomData?
     var user_a_option: Int?
-    var user_b_option: Int? = 1
     var roomID: Int?
     var vc: HomeViewController?
     
@@ -23,6 +22,7 @@ class ChaiViewController: UIViewController {
     var otherScore: Int?
     var myName: String?
     
+    @IBOutlet weak var endingGameView: UIView!
     @IBOutlet weak var selectionView: UIView!
     @IBOutlet weak var roundLabel: UILabel!
     @IBOutlet weak var otherScoreLabel: UILabel!
@@ -42,40 +42,29 @@ class ChaiViewController: UIViewController {
         activityIndicatorView.center = view.center
         activityIndicatorView.startAnimating()
         
+        monitorRoomStatus()
         repeatToGetResult()
     }
     
     @IBAction func pressScissors(_ sender: UIButton) {
-        mySelectImage.image = UIImage(named: "scissors")
         user_a_option = 1
-//        user_b_option = 1
-        
-        if user_b_option == 1 {
-            otherSelectImage.image = UIImage(named: "scissors")
-        }
+
         sendSelection()
+        monitorRoomStatus()
     }
     
     @IBAction func pressRock(_ sender: UIButton) {
-        mySelectImage.image = UIImage(named: "rock")
         user_a_option = 2
-//        user_b_option = 2
-        
-        if user_b_option == 2 {
-            otherSelectImage.image = UIImage(named: "rock")
-        }
+
         sendSelection()
+        monitorRoomStatus()
     }
     
     @IBAction func pressPaper(_ sender: UIButton) {
-        mySelectImage.image = UIImage(named: "paper")
         user_a_option = 3
-//        user_b_option = 3
-        
-        if user_b_option == 3 {
-            otherSelectImage.image = UIImage(named: "paper")
-        }
+
         sendSelection()
+        monitorRoomStatus()
     }
     
 
@@ -84,7 +73,7 @@ class ChaiViewController: UIViewController {
 extension ChaiViewController {
     
     func repeatToGetResult() {
-        repeatTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { (timer) in
+        repeatTimer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { (timer) in
             self.monitorRoomStatus()
         }
     }
@@ -108,9 +97,34 @@ extension ChaiViewController {
                     
                     DispatchQueue.main.async {
                         self.activityIndicatorView.removeFromSuperview()
+                        if self.roomData?.data.records.user_a_score == 2 || self.roomData?.data.records.user_b_score == 2 {
+                            self.endingGameView.isHidden = false
+                        }
                         self.myScoreLabel.text = "\(self.roomData?.data.records.user_a_score ?? 0)"
                         self.otherScoreLabel.text = "\(self.roomData?.data.records.user_b_score ?? 0)"
-//                        if roomData?.data.records.user_b_name
+                        self.roundLabel.text = "\(self.roomData?.data.records.round_id ?? 1)"
+                        self.otherNameLabel.text = self.roomData?.data.records.user_b_name
+                        
+                        if self.roomData?.data.records.user_a_option == "1" {
+                            self.mySelectImage.image = UIImage(named: "scissors")
+                        } else if self.roomData?.data.records.user_a_option == "2" {
+                            self.mySelectImage.image = UIImage(named: "rock")
+                        } else if self.roomData?.data.records.user_a_option == "3" {
+                            self.mySelectImage.image = UIImage(named: "paper")
+                        } else if self.roomData?.data.records.user_a_option == nil {
+                            self.mySelectImage.image = UIImage(named: "nothing")
+                        }
+                        
+                        
+                        if self.roomData?.data.records.user_b_option == "1" {
+                            self.otherSelectImage.image = UIImage(named: "scissors")
+                        } else if self.roomData?.data.records.user_b_option == "2" {
+                            self.otherSelectImage.image = UIImage(named: "rock")
+                        } else if self.roomData?.data.records.user_b_option == "3" {
+                            self.otherSelectImage.image = UIImage(named: "paper")
+                        } else if self.roomData?.data.records.user_b_option == nil {
+                            self.otherSelectImage.image = UIImage(named: "nothing")
+                        }
                     }
                 } catch {
                     print(error.localizedDescription)
