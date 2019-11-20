@@ -10,6 +10,7 @@ import UIKit
 
 class BiViewController: UIViewController {
 
+    var playerName: String?
     var initialTime: Int?
     var countDownTimer: Timer?
     var answerPoint: Int = 0
@@ -19,7 +20,10 @@ class BiViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        startTimer()
+        if let waitingVC = storyboard?.instantiateViewController(withIdentifier: "waitingVC") as? BiWaitViewController {
+            waitingVC.biVC = self
+            present(waitingVC, animated: false, completion: nil)
+        }
     }
     
     @IBOutlet var timerLabel: UILabel!
@@ -126,12 +130,12 @@ extension BiViewController {
                             DispatchQueue.main.async {
                                 
                                 let alertController = UIAlertController(title: self.winner!, message: nil, preferredStyle: .alert)
-                                alertController.addAction(UIAlertAction(title: "再玩一場", style: .default, handler: { (alert) in
+                                alertController.addAction(UIAlertAction(title: "離開房間", style: .default, handler: { (alert) in
                                     self.drawButton.isEnabled = true
                                     self.drawButton.backgroundColor = UIColor(red: 16/255, green: 81/255, blue: 151/255, alpha: 1)
                                     self.myAnswerImage.image = UIImage(named: "back")
                                     self.myAnswerImage.image = UIImage(named: "back")
-                                    self.startTimer()
+                                    self.dismiss(animated: true, completion: nil)
                                 }))
                                 self.present(alertController, animated: true, completion: nil)
                             }

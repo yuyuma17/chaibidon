@@ -11,6 +11,7 @@ import UIKit
 class BiWaitViewController: UIViewController {
     
     var biWaitStateTimer: Timer?
+    var biVC: BiViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +46,9 @@ extension BiWaitViewController {
                         if biWaitState.data == 2 {
                             self.biWaitStateTimer?.invalidate()
                             DispatchQueue.main.async {
-                                self.passToBi()
+                                self.dismiss(animated: true) {
+                                    self.biVC?.startTimer()
+                                }
                             }
                         }
                     }
