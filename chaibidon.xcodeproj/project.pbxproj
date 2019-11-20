@@ -18,6 +18,7 @@
 		16D1662E2384E2810030860D /* Don.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D1662D2384E2810030860D /* Don.storyboard */; };
 		16D166302384E6E40030860D /* (null) in Sources */ = {isa = PBXBuildFile; };
 		16D166322384EE4B0030860D /* (null) in Sources */ = {isa = PBXBuildFile; };
+		16D166342385105C0030860D /* ChaiStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D166332385105C0030860D /* ChaiStruct.swift */; };
 		B376433B2384FADF00EB57D0 /* ChaiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B376433A2384FADE00EB57D0 /* ChaiViewController.swift */; };
 		B376433D2384FAEA00EB57D0 /* ChaiWaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B376433C2384FAEA00EB57D0 /* ChaiWaitViewController.swift */; };
 		B3A80B7C2384F1FB00E8C9E2 /* BiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A80B7B2384F1FB00E8C9E2 /* BiViewController.swift */; };
@@ -37,6 +38,7 @@
 		16D166292384E2630030860D /* Chai.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chai.storyboard; sourceTree = "<group>"; };
 		16D1662B2384E2720030860D /* Bi.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bi.storyboard; sourceTree = "<group>"; };
 		16D1662D2384E2810030860D /* Don.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Don.storyboard; sourceTree = "<group>"; };
+		16D166332385105C0030860D /* ChaiStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaiStruct.swift; sourceTree = "<group>"; };
 		B376433A2384FADE00EB57D0 /* ChaiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChaiViewController.swift; sourceTree = "<group>"; };
 		B376433C2384FAEA00EB57D0 /* ChaiWaitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChaiWaitViewController.swift; sourceTree = "<group>"; };
 		B3A80B7B2384F1FB00E8C9E2 /* BiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				B3B47AF92384FC2D00BA87EF /* APIStruct.swift */,
+				16D166332385105C0030860D /* ChaiStruct.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				16D166162384E0B10030860D /* HomeViewController.swift in Sources */,
 				16D166122384E0B10030860D /* AppDelegate.swift in Sources */,
 				16D166142384E0B10030860D /* SceneDelegate.swift in Sources */,
+				16D166342385105C0030860D /* ChaiStruct.swift in Sources */,
 				B3B47AFA2384FC2D00BA87EF /* APIStruct.swift in Sources */,
 				B3A80B7C2384F1FB00E8C9E2 /* BiViewController.swift in Sources */,
 				16D166302384E6E40030860D /* (null) in Sources */,
