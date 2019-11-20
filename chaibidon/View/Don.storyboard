@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WdQ-Bp-SeK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yXI-dP-AfE">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
@@ -7,20 +7,55 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--終極密碼-->
         <scene sceneID="bUq-ot-uIY">
             <objects>
                 <viewController id="WdQ-Bp-SeK" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0AT-0d-ehi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQO-xW-JXM">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="VQO-xW-JXM" firstAttribute="leading" secondItem="TOt-8U-6HZ" secondAttribute="leading" id="7Ib-2o-AHT"/>
+                            <constraint firstItem="VQO-xW-JXM" firstAttribute="top" secondItem="TOt-8U-6HZ" secondAttribute="top" id="9DS-4P-tfe"/>
+                            <constraint firstItem="TOt-8U-6HZ" firstAttribute="trailing" secondItem="VQO-xW-JXM" secondAttribute="trailing" id="ffU-c1-1YA"/>
+                            <constraint firstAttribute="bottom" secondItem="VQO-xW-JXM" secondAttribute="bottom" id="wII-nq-u4x"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TOt-8U-6HZ"/>
                     </view>
+                    <navigationItem key="navigationItem" title="終極密碼" id="vbh-2g-uye"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wif-76-aVm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245" y="120"/>
+            <point key="canvasLocation" x="1155.072463768116" y="119.86607142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tRk-3c-yoc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yXI-dP-AfE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="w7Q-y2-F5y">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WdQ-Bp-SeK" kind="relationship" relationship="rootViewController" id="Cvq-kL-EXt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zFG-P5-ynP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="244.92753623188409" y="119.86607142857142"/>
         </scene>
     </scenes>
 </document>

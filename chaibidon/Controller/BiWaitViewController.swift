@@ -57,11 +57,4 @@ extension BiWaitViewController {
         }
     }
     
-    func passToBi() {
-        if let biVC = self.storyboard?.instantiateViewController(withIdentifier: "biVC") as? BiViewController {
-            self.navigationController?.pushViewController(biVC, animated: true)
-        }
-    }
-    
-    
 }

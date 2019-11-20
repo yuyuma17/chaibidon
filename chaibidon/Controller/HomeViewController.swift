@@ -46,7 +46,16 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func enterBiGame(_ sender: UIButton) {
+        
         enterBiGame()
+        
+        let storyboard = UIStoryboard(name: "Bi", bundle: nil)
+        if let biNavi = storyboard.instantiateViewController(withIdentifier: "biNavi") as? UINavigationController {
+            if let destination = biNavi.viewControllers.first as? BiViewController {
+                destination.playerName = playerTextField.text!
+                present(biNavi, animated: true, completion: nil)
+            }
+        }
     }
     
 }

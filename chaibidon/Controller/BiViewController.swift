@@ -29,6 +29,11 @@ class BiViewController: UIViewController {
     @IBOutlet var timerLabel: UILabel!
     @IBOutlet var myAnswerImage: UIImageView!
     @IBOutlet var enemyAnswerImage: UIImageView!
+    @IBOutlet var myName: UILabel! {
+        didSet {
+            myName.text = playerName!
+        }
+    }
     
     @IBOutlet var drawButton: UIButton!
     @IBAction func drawCard(_ sender: UIButton) {
@@ -67,7 +72,7 @@ extension BiViewController {
     }
     
     func postRandomPoint() {
-        let answer = BiAnswer(name: "123我", answer: answerPoint)
+        let answer = BiAnswer(name: playerName!, answer: answerPoint)
         guard let uploadData = try? JSONEncoder().encode(answer) else { return }
                 
         let url = URL(string: "https://c9aa79d8.ngrok.io/api/vs/send")!
@@ -122,7 +127,7 @@ extension BiViewController {
                             }
                             
                             for player in biResult.data.compares {
-                                if player.name != "123我" {
+                                if player.name != self.playerName! {
                                     self.enemyAnswerImage.image = UIImage(named: "\(player.answer!)")
                                 }
                             }

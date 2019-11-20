@@ -38,7 +38,7 @@
         <!--比 大小-->
         <scene sceneID="rWa-FZ-V1p">
             <objects>
-                <viewController storyboardIdentifier="biVC" id="u3J-fA-7Zg" customClass="BiViewController" customModule="chaibidon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="u3J-fA-7Zg" customClass="BiViewController" customModule="chaibidon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m85-Lj-60t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,6 +112,7 @@
                         <outlet property="drawButton" destination="BRF-DQ-8CQ" id="U7Q-bP-PbJ"/>
                         <outlet property="enemyAnswerImage" destination="cG5-Xc-HGa" id="Zs0-bZ-chy"/>
                         <outlet property="myAnswerImage" destination="kcq-g5-gVe" id="MMI-T5-zYh"/>
+                        <outlet property="myName" destination="DUg-6P-dvg" id="xX9-pU-o85"/>
                         <outlet property="timerLabel" destination="XvU-ua-SYa" id="qCq-8J-3ch"/>
                     </connections>
                 </viewController>
@@ -122,7 +123,7 @@
         <!--Navigation Controller-->
         <scene sceneID="HD9-RH-AAu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HCW-rt-RuY" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="biNavi" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="HCW-rt-RuY" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jsX-6p-CGM">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
