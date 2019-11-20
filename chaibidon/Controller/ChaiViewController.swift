@@ -16,9 +16,12 @@ class ChaiViewController: UIViewController {
     var roomID: Int?
     var vc: HomeViewController?
     
+    var repeatTimer: Timer?
     let activityIndicatorView = UIActivityIndicatorView(style: .large)
+    
     var myScore: Int?
     var otherScore: Int?
+    var myName: String?
     
     @IBOutlet weak var selectionView: UIView!
     @IBOutlet weak var roundLabel: UILabel!
@@ -38,6 +41,7 @@ class ChaiViewController: UIViewController {
         activityIndicatorView.startAnimating()
         
         monitorRoomStatus()
+        repeatToGetResult()
     }
     
     @IBAction func pressScissors(_ sender: UIButton) {
@@ -78,6 +82,12 @@ class ChaiViewController: UIViewController {
 
 extension ChaiViewController {
     
+    func repeatToGetResult() {
+        repeatTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { (timer) in
+            self.monitorRoomStatus()
+        }
+    }
+    
     func monitorRoomStatus() {
         
         if let url = URL(string: "https://85fb8eaa.ngrok.io/api/pss/watch/\(roomID)") {
@@ -99,7 +109,7 @@ extension ChaiViewController {
                         self.activityIndicatorView.removeFromSuperview()
                         self.myScoreLabel.text = "\(self.roomData?.data.records.user_a_score ?? 0)"
                         self.otherScoreLabel.text = "\(self.roomData?.data.records.user_b_score ?? 0)"
-                        
+                        self.myNameLabel.text = self.myName
                     }
                 } catch {
                     print(error.localizedDescription)
