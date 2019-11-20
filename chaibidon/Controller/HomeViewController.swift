@@ -14,6 +14,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        settingParallaxEffect(chaibi)
     }
 
     @IBOutlet weak var playerTextField: UITextField!
@@ -21,6 +23,8 @@ class HomeViewController: UIViewController {
     @IBOutlet var chaiBiDon: [UIButton]! {
         didSet {
             for item in chaiBiDon {
+                item.isEnabled = false
+                item.backgroundColor = .lightGray
                 item.layer.cornerRadius = item.frame.width / 2
                 item.clipsToBounds = true
             }
@@ -30,6 +34,20 @@ class HomeViewController: UIViewController {
         didSet {
             chaibi.layer.cornerRadius = chaibi.frame.width / 2
             chaibi.clipsToBounds = true
+        }
+    }
+    
+    @IBAction func checkContent(_ sender: UITextField) {
+        if sender.text?.trimmingCharacters(in: .whitespaces) == "" {
+            for item in chaiBiDon {
+                item.isEnabled = false
+                item.backgroundColor = .lightGray
+            }
+        } else if sender.text?.trimmingCharacters(in: .whitespaces).count == 1 {
+            for item in chaiBiDon {
+                item.isEnabled = true
+                item.backgroundColor = .brown
+            }
         }
     }
     
@@ -52,18 +70,28 @@ class HomeViewController: UIViewController {
         
         enterBiGame()
         
-        let storyboard = UIStoryboard(name: "Bi", bundle: nil)
-        if let biNavi = storyboard.instantiateViewController(withIdentifier: "biNavi") as? UINavigationController {
-            if let destination = biNavi.viewControllers.first as? BiViewController {
-                destination.playerName = playerTextField.text!
-                present(biNavi, animated: true, completion: nil)
-            }
-        }
     }
     
 }
 
 extension HomeViewController {
+    
+    func settingParallaxEffect(_ view: UIView) {
+        let horizonValue = UIScreen.main.bounds.width / 2
+        let verticalValue = UIScreen.main.bounds.height / 4
+        
+        let horizontal = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
+        horizontal.minimumRelativeValue = -horizonValue
+        horizontal.maximumRelativeValue = horizonValue
+        
+        let vertical = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
+        vertical.minimumRelativeValue = -verticalValue
+        vertical.maximumRelativeValue = verticalValue
+        
+        let motionGroup = UIMotionEffectGroup()
+        motionGroup.motionEffects = [horizontal, vertical]
+        view.addMotionEffect(motionGroup)
+    }
     
     func startMoraGame() {
         
@@ -117,6 +145,7 @@ extension HomeViewController {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
                 
         let task = URLSession.shared.uploadTask(with: request, from: uploadData) { (data, response, error) in
             if let error = error {
@@ -125,14 +154,33 @@ extension HomeViewController {
             }
             if let response = response as? HTTPURLResponse {
                 print("status code: \(response.statusCode)")
-                if let mimeType = response.mimeType,
-                    mimeType == "application/json",
-                    let data = data,
-                    let dataString = String(data: data, encoding: .utf8) {
-                    print ("got data: \(dataString)")
+                DispatchQueue.main.async {
+                    if response.statusCode == 422 {
+                        let alertController = UIAlertController(title: "使用者名稱重複！", message: nil, preferredStyle: .alert)
+                        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        self.present(alertController, animated: true, completion: nil)
+                    } else {
+                        let storyboard = UIStoryboard(name: "Bi", bundle: nil)
+                        if let biNavi = storyboard.instantiateViewController(withIdentifier: "biNavi") as? UINavigationController {
+                            if let destination = biNavi.viewControllers.first as? BiViewController {
+                                destination.playerName = self.playerTextField.text!
+                                self.present(biNavi, animated: true, completion: nil)
+                            }
+                        }
+                    }
                 }
+
             }
         }
         task.resume()
     }
+}
+
+extension HomeViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
 }

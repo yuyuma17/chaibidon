@@ -78,6 +78,10 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="checkContent:" destination="BYZ-38-t0r" eventType="editingChanged" id="pKg-u8-COt"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="WX6-S0-T46"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

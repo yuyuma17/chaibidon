@@ -32,14 +32,15 @@ class BiViewController: UIViewController {
     @IBOutlet var myAnswerImage: UIImageView!
     @IBOutlet var enemyAnswerImage: UIImageView!
     @IBOutlet var myName: UILabel! {
-        didSet {
-            myName.text = playerName!
-        }
+        didSet { myName.text = playerName! }
     }
-    
     @IBOutlet var drawButton: UIButton!
+    
     @IBAction func drawCard(_ sender: UIButton) {
         countDownTimer?.invalidate()
+        timerLabel.text = "等待對方抽卡..."
+        sender.isEnabled = false
+        sender.backgroundColor = .darkGray
         
         let url = Bundle.main.url(forResource: "闇の魔術師", withExtension: ".mp3")
         do {
@@ -48,11 +49,6 @@ class BiViewController: UIViewController {
         } catch {
             print("Error:", error.localizedDescription)
         }
-        
-        timerLabel.text = "等待對方抽卡..."
-        
-        sender.isEnabled = false
-        sender.backgroundColor = .darkGray
         
         var count: Double = 3
         Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { (timer) in
