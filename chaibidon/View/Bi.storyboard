@@ -14,7 +14,19 @@
                     <view key="view" contentMode="scaleToFill" id="poC-QA-8GI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="等待其他玩家加入..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hln-Hs-ugJ">
+                                <rect key="frame" x="116.5" y="436" width="181" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Hln-Hs-ugJ" firstAttribute="centerY" secondItem="poC-QA-8GI" secondAttribute="centerY" id="1Q8-UW-9GV"/>
+                            <constraint firstItem="Hln-Hs-ugJ" firstAttribute="centerX" secondItem="poC-QA-8GI" secondAttribute="centerX" id="F4i-Vm-cWM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="g4L-HZ-anL"/>
                     </view>
                     <navigationItem key="navigationItem" id="CY6-51-4it"/>

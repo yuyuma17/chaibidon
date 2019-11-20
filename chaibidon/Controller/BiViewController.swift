@@ -14,6 +14,7 @@ class BiViewController: UIViewController {
     var countDownTimer: Timer?
     var answerPoint: Int = 0
     var repeatToGetResultTimer: Timer?
+    var winner: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,10 +110,31 @@ extension BiViewController {
                         print(biResult)
                         if biResult.data.winner != "Not yet" {
                             self.repeatToGetResultTimer?.invalidate()
-                            DispatchQueue.main.async {
-                                self.drawButton.isEnabled = true
+                            
+                            if biResult.data.winner == "Nobody" {
+                                self.winner = "平手"
+                            } else {
+                                self.winner = "\(biResult.data.winner) 勝利"
                             }
                             
+                            for player in biResult.data.compares {
+                                if player.name != "123我" {
+                                    self.enemyAnswerImage.image = UIImage(named: "\(player.answer!)")
+                                }
+                            }
+                            
+                            DispatchQueue.main.async {
+                                
+                                let alertController = UIAlertController(title: self.winner!, message: nil, preferredStyle: .alert)
+                                alertController.addAction(UIAlertAction(title: "再玩一場", style: .default, handler: { (alert) in
+                                    self.drawButton.isEnabled = true
+                                    self.drawButton.backgroundColor = UIColor(red: 16/255, green: 81/255, blue: 151/255, alpha: 1)
+                                    self.myAnswerImage.image = UIImage(named: "back")
+                                    self.myAnswerImage.image = UIImage(named: "back")
+                                    self.startTimer()
+                                }))
+                                self.present(alertController, animated: true, completion: nil)
+                            }
                         }
                     }
                 }
