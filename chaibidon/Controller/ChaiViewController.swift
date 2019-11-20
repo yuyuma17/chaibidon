@@ -13,6 +13,8 @@ class ChaiViewController: UIViewController {
     var roomData: RoomData?
     var user_a_option: Int?
     var user_b_option: Int? = 1
+    var roomID: Int?
+    var vc: HomeViewController?
     
     let activityIndicatorView = UIActivityIndicatorView(style: .large)
     var myScore: Int?
@@ -78,7 +80,7 @@ extension ChaiViewController {
     
     func monitorRoomStatus() {
         
-        if let url = URL(string: "https://85fb8eaa.ngrok.io/api/pss/watch/1") {
+        if let url = URL(string: "https://85fb8eaa.ngrok.io/api/pss/watch/\(roomID)") {
             URLSession.shared.dataTask(with: url) { (data, response, error) in
                 if let error = error {
                     print("error: \(error.localizedDescription)")
@@ -115,7 +117,7 @@ extension ChaiViewController {
         guard let uploadData = try? JSONEncoder().encode(passingData) else {
             return
         }
-        let url = URL(string: "https://85fb8eaa.ngrok.io/api/pss/send/14")!
+        let url = URL(string: "https://85fb8eaa.ngrok.io/api/pss/send/\(roomID)")!
 
         var request = URLRequest(url: url)
         request.httpMethod = "Post"
