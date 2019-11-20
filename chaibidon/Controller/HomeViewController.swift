@@ -15,6 +15,20 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBOutlet var chaiBiDon: [UIButton]! {
+        didSet {
+            for item in chaiBiDon {
+                item.layer.cornerRadius = item.frame.width / 2
+                item.clipsToBounds = true
+            }
+        }
+    }
+    @IBOutlet var chaibi: UIImageView! {
+        didSet {
+            chaibi.layer.cornerRadius = chaibi.frame.width / 2
+            chaibi.clipsToBounds = true
+        }
+    }
+    
 
 }
-

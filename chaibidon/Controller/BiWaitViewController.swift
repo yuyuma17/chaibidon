@@ -9,16 +9,25 @@
 import UIKit
 
 class BiWaitViewController: UIViewController {
-
+    
+    var biWaitStateTimer: Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        repeatToGet()
     }
 
 }
 
 extension BiWaitViewController {
+    
+    func repeatToGet() {
+        
+        biWaitStateTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
+            self.getWaitingState()
+        }
+    }
     
     func getWaitingState() {
         let address = "https://c9aa79d8.ngrok.io/api/vs/login"
@@ -31,12 +40,25 @@ extension BiWaitViewController {
                 guard let data = data else { return }
                 if let response = response as? HTTPURLResponse {
                     print("status code: \(response.statusCode)")
-//                    if let wannaLuhseinData = try? JSONDecoder().decode(WannaLuHseinData.self, from: data) {
-//                        self.wannaLuhseinData = wannaLuhseinData
-//                    }
+                    if let biWaitState = try? JSONDecoder().decode(BiWait.self, from: data) {
+                        print(biWaitState)
+                        if biWaitState.data == 2 {
+                            self.biWaitStateTimer?.invalidate()
+                            DispatchQueue.main.async {
+                                self.passToBi()
+                            }
+                        }
+                    }
                 }
             }.resume()
         }
     }
+    
+    func passToBi() {
+        if let biVC = self.storyboard?.instantiateViewController(withIdentifier: "biVC") as? BiViewController {
+            self.navigationController?.pushViewController(biVC, animated: true)
+        }
+    }
+    
     
 }
