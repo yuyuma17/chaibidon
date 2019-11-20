@@ -23,6 +23,8 @@ class ChaiViewController: UIViewController {
     @IBOutlet weak var otherSelectImage: UIImageView!
     @IBOutlet weak var mySelectImage: UIImageView!
     @IBOutlet weak var tauntImageView: UIImageView!
+    @IBOutlet weak var myNameLabel: UILabel!
+    @IBOutlet weak var otherNameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

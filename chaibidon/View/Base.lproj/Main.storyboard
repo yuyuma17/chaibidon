@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,6 +29,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="toMoraGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9dM-XA-T5N"/>
                                             <segue destination="fUB-ac-sss" kind="show" id="6xY-IU-0aq"/>
                                         </connections>
                                     </button>
@@ -92,6 +93,7 @@
                     </view>
                     <connections>
                         <outlet property="chaibi" destination="7Ca-sF-IER" id="ZFH-cR-rYv"/>
+                        <outlet property="playerTextField" destination="wJv-5A-Fqi" id="sRh-WL-Z6b"/>
                         <outletCollection property="chaiBiDon" destination="Uhf-KZ-Ow9" collectionClass="NSMutableArray" id="hJp-Qb-sIS"/>
                         <outletCollection property="chaiBiDon" destination="udJ-O2-lYX" collectionClass="NSMutableArray" id="Tyf-sY-KrG"/>
                         <outletCollection property="chaiBiDon" destination="oiT-M7-8Aa" collectionClass="NSMutableArray" id="bWd-Vc-9xd"/>
