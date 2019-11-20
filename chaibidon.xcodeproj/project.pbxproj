@@ -16,6 +16,8 @@
 		16D1662A2384E2630030860D /* Chai.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D166292384E2630030860D /* Chai.storyboard */; };
 		16D1662C2384E2720030860D /* Bi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D1662B2384E2720030860D /* Bi.storyboard */; };
 		16D1662E2384E2810030860D /* Don.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D1662D2384E2810030860D /* Don.storyboard */; };
+		B3A80B7C2384F1FB00E8C9E2 /* BiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A80B7B2384F1FB00E8C9E2 /* BiViewController.swift */; };
+		B3A80B7E2384F5E200E8C9E2 /* WaitBiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A80B7D2384F5E200E8C9E2 /* WaitBiViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		16D166292384E2630030860D /* Chai.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chai.storyboard; sourceTree = "<group>"; };
 		16D1662B2384E2720030860D /* Bi.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bi.storyboard; sourceTree = "<group>"; };
 		16D1662D2384E2810030860D /* Don.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Don.storyboard; sourceTree = "<group>"; };
+		B3A80B7B2384F1FB00E8C9E2 /* BiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiViewController.swift; sourceTree = "<group>"; };
+		B3A80B7D2384F5E200E8C9E2 /* WaitBiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitBiViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				16D1661A2384E0B20030860D /* Assets.xcassets */,
 				16D1661C2384E0B20030860D /* LaunchScreen.storyboard */,
 				16D1661F2384E0B20030860D /* Info.plist */,
+				B3A80B7B2384F1FB00E8C9E2 /* BiViewController.swift */,
+				B3A80B7D2384F5E200E8C9E2 /* WaitBiViewController.swift */,
 			);
 			path = chaibidon;
 			sourceTree = "<group>";
@@ -151,8 +157,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				16D166162384E0B10030860D /* ViewController.swift in Sources */,
+				B3A80B7E2384F5E200E8C9E2 /* WaitBiViewController.swift in Sources */,
 				16D166122384E0B10030860D /* AppDelegate.swift in Sources */,
 				16D166142384E0B10030860D /* SceneDelegate.swift in Sources */,
+				B3A80B7C2384F1FB00E8C9E2 /* BiViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
