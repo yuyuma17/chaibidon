@@ -7,13 +7,44 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="chaibidon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="chaibidon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhf-KZ-Ow9">
+                                <rect key="frame" x="184" y="505" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="fUB-ac-sss" kind="show" id="6xY-IU-0aq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiT-M7-8Aa">
+                                <rect key="frame" x="184" y="676" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="x6p-Ai-Bbm" kind="show" id="hN3-dL-5Y3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vpz-qg-gZG">
+                                <rect key="frame" x="184" y="591" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udJ-O2-lYX">
+                                <rect key="frame" x="184" y="591" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="PmM-2F-UCL" kind="show" id="WcK-99-qOe"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -25,26 +56,32 @@
         <!--Chai-->
         <scene sceneID="Bls-of-v3F">
             <objects>
-                <viewControllerPlaceholder storyboardName="Chai" id="fUB-ac-sss" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Chai" id="fUB-ac-sss" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="lXM-va-dtT"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m1u-et-k6r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="783" y="-59"/>
+            <point key="canvasLocation" x="781" y="-63"/>
         </scene>
         <!--Bi-->
         <scene sceneID="pVp-aS-9Lo">
             <objects>
-                <viewControllerPlaceholder storyboardName="Bi" id="PmM-2F-UCL" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Bi" id="PmM-2F-UCL" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="1fJ-4o-T08"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R6b-cm-UHQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="794" y="87"/>
+            <point key="canvasLocation" x="781" y="86"/>
         </scene>
         <!--Don-->
         <scene sceneID="AD8-VX-gdC">
             <objects>
-                <viewControllerPlaceholder storyboardName="Don" id="x6p-Ai-Bbm" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Don" id="x6p-Ai-Bbm" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="l2y-Ro-G0e"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EbD-W7-SL6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="786" y="229"/>
+            <point key="canvasLocation" x="781" y="246"/>
         </scene>
     </scenes>
 </document>

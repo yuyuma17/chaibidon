@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		16D166122384E0B10030860D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D166112384E0B10030860D /* AppDelegate.swift */; };
 		16D166142384E0B10030860D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D166132384E0B10030860D /* SceneDelegate.swift */; };
-		16D166162384E0B10030860D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D166152384E0B10030860D /* ViewController.swift */; };
+		16D166162384E0B10030860D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D166152384E0B10030860D /* HomeViewController.swift */; };
 		16D166192384E0B10030860D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D166172384E0B10030860D /* Main.storyboard */; };
 		16D1661B2384E0B20030860D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16D1661A2384E0B20030860D /* Assets.xcassets */; };
 		16D1661E2384E0B20030860D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D1661C2384E0B20030860D /* LaunchScreen.storyboard */; };
@@ -18,13 +18,15 @@
 		16D1662E2384E2810030860D /* Don.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D1662D2384E2810030860D /* Don.storyboard */; };
 		B3A80B7C2384F1FB00E8C9E2 /* BiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A80B7B2384F1FB00E8C9E2 /* BiViewController.swift */; };
 		B3A80B7E2384F5E200E8C9E2 /* WaitBiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A80B7D2384F5E200E8C9E2 /* WaitBiViewController.swift */; };
+		16D166302384E6E40030860D /* ChaiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D1662F2384E6E40030860D /* ChaiViewController.swift */; };
+		16D166322384EE4B0030860D /* ChaiWaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D166312384EE4B0030860D /* ChaiWaitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		16D1660E2384E0B10030860D /* chaibidon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chaibidon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16D166112384E0B10030860D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16D166132384E0B10030860D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		16D166152384E0B10030860D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		16D166152384E0B10030860D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		16D166182384E0B10030860D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		16D1661A2384E0B20030860D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16D1661D2384E0B20030860D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,7 +70,9 @@
 			children = (
 				16D166112384E0B10030860D /* AppDelegate.swift */,
 				16D166132384E0B10030860D /* SceneDelegate.swift */,
-				16D166152384E0B10030860D /* ViewController.swift */,
+				16D166152384E0B10030860D /* HomeViewController.swift */,
+				16D166312384EE4B0030860D /* ChaiWaitViewController.swift */,
+				16D1662F2384E6E40030860D /* ChaiViewController.swift */,
 				16D166172384E0B10030860D /* Main.storyboard */,
 				16D166292384E2630030860D /* Chai.storyboard */,
 				16D1662B2384E2720030860D /* Bi.storyboard */,
@@ -156,11 +160,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16D166162384E0B10030860D /* ViewController.swift in Sources */,
-				B3A80B7E2384F5E200E8C9E2 /* WaitBiViewController.swift in Sources */,
+				16D166162384E0B10030860D /* HomeViewController.swift in Sources */,
 				16D166122384E0B10030860D /* AppDelegate.swift in Sources */,
 				16D166142384E0B10030860D /* SceneDelegate.swift in Sources */,
 				B3A80B7C2384F1FB00E8C9E2 /* BiViewController.swift in Sources */,
+				16D166302384E6E40030860D /* ChaiViewController.swift in Sources */,
+				16D166322384EE4B0030860D /* ChaiWaitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
