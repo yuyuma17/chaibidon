@@ -20,3 +20,19 @@ class ChaiWaitViewController: UIViewController {
 
 
 }
+
+extension ChaiWaitViewController {
+    
+    func waitSomeoneEnterRoom() {
+        
+        
+        
+        
+    }
+    
+    func intoTheRoom() {
+        
+    }
+    
+    
+}
