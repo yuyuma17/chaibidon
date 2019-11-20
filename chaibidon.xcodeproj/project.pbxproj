@@ -13,6 +13,9 @@
 		16D166192384E0B10030860D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D166172384E0B10030860D /* Main.storyboard */; };
 		16D1661B2384E0B20030860D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16D1661A2384E0B20030860D /* Assets.xcassets */; };
 		16D1661E2384E0B20030860D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D1661C2384E0B20030860D /* LaunchScreen.storyboard */; };
+		16D1662A2384E2630030860D /* Chai.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D166292384E2630030860D /* Chai.storyboard */; };
+		16D1662C2384E2720030860D /* Bi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D1662B2384E2720030860D /* Bi.storyboard */; };
+		16D1662E2384E2810030860D /* Don.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D1662D2384E2810030860D /* Don.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		16D1661A2384E0B20030860D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16D1661D2384E0B20030860D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16D1661F2384E0B20030860D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16D166292384E2630030860D /* Chai.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chai.storyboard; sourceTree = "<group>"; };
+		16D1662B2384E2720030860D /* Bi.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bi.storyboard; sourceTree = "<group>"; };
+		16D1662D2384E2810030860D /* Don.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Don.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 				16D166132384E0B10030860D /* SceneDelegate.swift */,
 				16D166152384E0B10030860D /* ViewController.swift */,
 				16D166172384E0B10030860D /* Main.storyboard */,
+				16D166292384E2630030860D /* Chai.storyboard */,
+				16D1662B2384E2720030860D /* Bi.storyboard */,
+				16D1662D2384E2810030860D /* Don.storyboard */,
 				16D1661A2384E0B20030860D /* Assets.xcassets */,
 				16D1661C2384E0B20030860D /* LaunchScreen.storyboard */,
 				16D1661F2384E0B20030860D /* Info.plist */,
@@ -125,9 +134,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16D1662E2384E2810030860D /* Don.storyboard in Resources */,
 				16D1661E2384E0B20030860D /* LaunchScreen.storyboard in Resources */,
 				16D1661B2384E0B20030860D /* Assets.xcassets in Resources */,
+				16D1662C2384E2720030860D /* Bi.storyboard in Resources */,
 				16D166192384E0B10030860D /* Main.storyboard in Resources */,
+				16D1662A2384E2630030860D /* Chai.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
