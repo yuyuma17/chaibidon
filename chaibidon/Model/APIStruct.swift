@@ -26,9 +26,18 @@ struct BiResult: Codable {
     var data: Data
     
     struct Data: Codable {
-        var a_answer: Int?
-        var b_answer: Int?
+        
         var winner: String
+        var compares: [Compares]
+        
+        struct Compares: Codable {
+            
+            var name: String
+            var answer: Int?
+            
+        }
+        
     }
+    
     
 }
