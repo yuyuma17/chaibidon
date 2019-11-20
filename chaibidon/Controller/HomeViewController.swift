@@ -34,6 +34,14 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func toMoraGame(_ sender: UIButton) {
+        
+        let storyboard = UIStoryboard(name: "Chai", bundle: nil)
+        let chaiVC = storyboard.instantiateViewController(identifier: "chaiVC") as! ChaiViewController
+        
+        chaiVC.roomID = loginAndReceiveData?.room.id
+        chaiVC.vc = self
+        present(chaiVC, animated: true)
+        
         startMoraGame()
     }
     
@@ -107,5 +115,4 @@ extension HomeViewController {
         }
         task.resume()
     }
-    
 }
